@@ -1,5 +1,6 @@
 from starlette.applications import Starlette
-from starlette.routing import Mount, Host
+from starlette.routing import Route
+from starlette.responses import JSONResponse
 from mcp.server.fastmcp import FastMCP
 
 server = FastMCP("SSE Platzi")
@@ -25,3 +26,11 @@ def divide(a: int, b: int) -> float:
     if b == 0:
         raise ValueError("Cannot divide by zero.")
     return a / b
+
+async def homepage(request):
+    return JSONResponse({'hello': 'world'})
+
+
+app = Starlette(debug=True, routes=[
+    Route('/', homepage),
+])
