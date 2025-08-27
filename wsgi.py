@@ -1,4 +1,3 @@
-from src.server import app
+from src.server import server
 
-if __name__ == "__main__":
-    app.run()
+app = server.asgi_app()
