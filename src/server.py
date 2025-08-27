@@ -4,12 +4,6 @@ from mcp.server.fastmcp import FastMCP
 
 server = FastMCP("SSE Platzi")
 
-app = Starlette(
-    routes=[
-        Mount('/', app=server.run_sse_async()),
-    ]
-)
-
 @server.tool()
 def add(a: int, b: int) -> int:
     """Add two numbers."""
@@ -31,3 +25,5 @@ def divide(a: int, b: int) -> float:
     if b == 0:
         raise ValueError("Cannot divide by zero.")
     return a / b
+
+app = server.app
