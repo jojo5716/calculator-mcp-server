@@ -11,6 +11,7 @@ python = "^3.10.18"
 mcp="1.4.1"
 gunicorn = "^23.0.0"
 uvicorn = "^0.35.0"
+azure-ai-inference = "^1.0.0b9"
 
 
 [tool.poetry.group.dev.dependencies]
