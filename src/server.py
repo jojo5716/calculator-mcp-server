@@ -2,9 +2,13 @@ from starlette.applications import Starlette
 from starlette.routing import Mount, Host
 from mcp.server.fastmcp import FastMCP
 
-server = FastMCP("SSE")
+server = FastMCP("SSE Platzi")
 
-
+app = Starlette(
+    routes=[
+        Mount('/', app=server.sse_app()),
+    ]
+)
 
 @server.tool()
 def add(a: int, b: int) -> int:
