@@ -7,7 +7,7 @@ authors = ["Jonathan Rodríguez Alejos <jrodriguez.5716@gmail.com>"]
 packages = [{include = "src"}]
 
 [tool.poetry.dependencies]
-python = "^3.12.9"
+python = "^3.10.18"
 mcp="1.4.1"
 gunicorn = "^23.0.0"
 
