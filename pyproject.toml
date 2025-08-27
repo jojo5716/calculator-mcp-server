@@ -1,12 +1,16 @@
-[project]
+[tool.poetry]
 name = "calculadoramcp"
 version = "0.1.0"
 description = "A simple MCP"
 readme = "README.md"
-requires-python = ">=3.10"
-dependencies = [
-    "mcp==1.4.1"
-]
+authors = ["Jonathan Rodríguez Alejos <jrodriguez.5716@gmail.com>"]
 
-[project.optional-dependencies]
-dev = ["debugpy==1.8.8"]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+mcp="1.4.1"
+gunicorn = "^23.0.0"
+
+
+[tool.poetry.group.dev.dependencies]
+debugpy="1.8.8"
