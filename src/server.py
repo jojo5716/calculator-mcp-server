@@ -25,9 +25,3 @@ def divide(a: int, b: int) -> float:
     if b == 0:
         raise ValueError("Cannot divide by zero.")
     return a / b
-
-app = Starlette(
-    routes=[
-        Mount("/", app=server.starlette_app()),
-    ]
-)
