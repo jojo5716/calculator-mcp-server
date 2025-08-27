@@ -6,7 +6,7 @@ server = FastMCP("SSE Platzi")
 
 app = Starlette(
     routes=[
-        Mount('/', app=server.sse_app()),
+        Mount('/', app=server.run_sse_async()),
     ]
 )
 
